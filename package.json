@@ -1,0 +1,56 @@
+{
+  "name": "jinli-backend",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "egg": {
+    "declarations": true
+  },
+  "dependencies": {
+    "egg": "^3",
+    "egg-cors": "^2.2.3",
+    "egg-passport": "^2.1.1",
+    "egg-redis": "^2.4.0",
+    "egg-scripts": "^2",
+    "egg-sequelize": "^5.2.2",
+    "egg-validate": "^2.0.2",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.1.0",
+    "nodemailer": "^6.4.10"
+  },
+  "devDependencies": {
+    "cz-customizable": "^6.3.0",
+    "egg-bin": "^5",
+    "egg-ci": "^2",
+    "egg-mock": "^5"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "scripts": {
+    "start": "egg-scripts start --daemon --title=egg-server-jinli-backend",
+    "stop": "egg-scripts stop --title=egg-server-jinli-backend",
+    "dev": "egg-bin dev",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov"
+  },
+  "ci": {
+    "version": "16, 18",
+    "type": "github"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "MIT",
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  }
+}
