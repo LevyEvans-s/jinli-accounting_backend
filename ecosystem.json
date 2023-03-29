@@ -17,7 +17,7 @@
       "host":["8.130.16.51"],
       "port":"22",
       "ref":"origin/main",
-      "repo":"git@github.com:LevyEvans-s/jinli-accounting.git",
+      "repo":"git@github.com:LevyEvans-s/jinli-accounting_backend.git",
       "path":"/usr/local/jinli-backend",
       "ssh_options":"StrictHostKeyChecking=no",
       "env":{
