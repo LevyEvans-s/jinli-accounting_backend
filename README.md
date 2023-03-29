@@ -1,6 +1,7 @@
 # jinli-backend
 
-
+# QuickDeploy
+pm2 deploy ecosystem.json production
 
 ## QuickStart
 
