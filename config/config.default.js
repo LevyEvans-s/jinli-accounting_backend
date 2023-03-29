@@ -30,6 +30,13 @@ module.exports = appInfo => {
     credentials: true // 允许前端携带cookie
   };
 
+  // 关闭csrf
+  config.security = {
+    csrf: {
+      enable: false
+    }
+  }
+
   return {
     ...config,
     ...userConfig,

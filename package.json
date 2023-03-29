@@ -16,7 +16,8 @@
     "egg-validate": "^2.0.2",
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.1.0",
-    "nodemailer": "^6.4.10"
+    "nodemailer": "^6.4.10",
+    "egg-session-redis": "^2.1.0"
   },
   "devDependencies": {
     "cz-customizable": "^6.3.0",

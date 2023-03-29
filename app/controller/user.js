@@ -13,15 +13,11 @@ class UserController extends Controller {
    */
   async login() {
     const { ctx } = this;
-    ctx.body = {
-      code: 200,
-      msg: "注册成功",
-      data: {
-        user: "koto",
-        token: "Bearer xxxxx",
-        createTime: "2023-03-26"
-      }
-    }
+    ctx.success({
+      user: "koto",
+      token: "Bearer xxxxx",
+      createTime: "2023-03-26"
+    })
   }
 }
 
