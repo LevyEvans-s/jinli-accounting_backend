@@ -1,5 +1,5 @@
 module.exports = {
-  success(data, status = 200, msg = '请求成功') {
+  success(data = {}, msg = '请求成功', status = 200) {
     this.status = status; // RESTful API的响应状态
     this.body = {
       code: status,

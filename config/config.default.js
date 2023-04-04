@@ -16,18 +16,16 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1679813154362_4252';
 
   // add your middleware config here
-  config.middleware = [];
+  config.middleware = ['errorHandler'];
 
-  config.cluster = {
-    listen: {
-      path: '',
-      port: 7001,
-      hostname: '0.0.0.0',
-    }
-  };
+  config.errorHandler = {
+    ignore: ['/api/v1/email/send']
+  }
+
   // add your user config here
   const userConfig = {
-    // myAppName: 'egg',
+    X_TI_APP_ID: 'c7194dccd18ccab5d35beac565d11020',
+    X_TI_SECRET_CODE: '5746a12c7f3ec242e56d96b8dbf7fd96'
   };
 
   // 跨域相关配置
@@ -42,6 +40,27 @@ module.exports = appInfo => {
     csrf: {
       enable: false
     }
+  }
+
+  config.logger = {
+    outputJSON: true
+  }
+
+  config.qqEmail = {
+    host: 'smtp.qq.com',		// QQ邮箱的SMTP地址
+    port: 465,				 	// 邮箱的端口号一般都使用465，
+    auth: {
+      user: '2650006147@qq.com',
+      pass: 'jnybymigwjwieafd',     // 授权码
+    },
+  }
+
+  config.multipart = {
+    mode: 'stream',
+    fileModeMatch: /(\/bills_crop_batch)$/, // /pageTemplate接口使用file模式，其他使用stream模式
+    whitelist: ['.jpg', '.jpeg', '.png', '.gif', '.webp'],
+    fileSize: '10mb',
+    fieldSize: '1024kb',
   }
 
   return {
