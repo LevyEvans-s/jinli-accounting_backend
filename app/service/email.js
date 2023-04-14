@@ -10,7 +10,7 @@ class emailService extends Service {
       code: emailVerifyCode,
       expire: Date.now() + 600 * 1000
     }
-
+    console.log('发送email时候的session', ctx.session)
     const email = {
       title: '锦鲤记账---邮箱验证码',
       body: `

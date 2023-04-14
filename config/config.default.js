@@ -25,12 +25,14 @@ module.exports = appInfo => {
   // add your user config here
   const userConfig = {
     X_TI_APP_ID: 'c7194dccd18ccab5d35beac565d11020',
-    X_TI_SECRET_CODE: '5746a12c7f3ec242e56d96b8dbf7fd96'
+    X_TI_SECRET_CODE: '5746a12c7f3ec242e56d96b8dbf7fd96',
+    defaultAvatar: 'https://jinli-accounting.oss-cn-shanghai.aliyuncs.com/static/image/avatar.jpg',
+    OPENAI_API_KEY: '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'
   };
 
   // 跨域相关配置
   config.cors = {
-    origin: '*', // 允许哪个地址跨域请求
+    origin: 'http://localhost:8080', // 允许哪个地址跨域请求
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH', // 允许哪些方法跨域请求
     credentials: true // 允许前端携带cookie
   };

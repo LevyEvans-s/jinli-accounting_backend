@@ -38,6 +38,7 @@ async function verifyEmailCode(code) {
   const serverCaptcha = ctx.session.verifyCode
   let serverCode;
   let serverExpire;
+  console.log('验证时候的session', ctx.session)
   try {
     serverCode = serverCaptcha.code;
     serverExpire = serverCaptcha.expire;
@@ -52,6 +53,7 @@ async function verifyEmailCode(code) {
     ctx.throw(422, '验证码不正确')
   }
   ctx.session.verifyCode = null;
+  return { code: 200, msg: '验证成功', status: true }
 }
 
 // 向合合信息请求第三方OCR接口调用

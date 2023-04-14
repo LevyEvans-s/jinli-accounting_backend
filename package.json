@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "ali-oss": "^6.17.1",
+    "chatgpt": "^5.2.2",
     "egg": "^3",
     "egg-cors": "^2.2.3",
     "egg-passport": "^2.1.1",

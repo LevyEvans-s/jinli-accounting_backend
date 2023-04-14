@@ -38,6 +38,12 @@ const MAIL_FORMAT_ERROR = {
   msg: '邮箱格式错误'
 }
 
+// 邮箱已绑定过账户
+const MAIL_EXISTS = {
+  errno: 10008,
+  msg: '邮箱已绑定过账户'
+}
+
 module.exports = {
   REGISTER_USERNAME_EXIST,
   REGISTER_FAIL,
@@ -45,5 +51,6 @@ module.exports = {
   LOGIN_FAIL,
   LOGIN_CHECK_FAIL,
   MAIL_VERIFY_CODE_SEND_FAIL,
-  MAIL_FORMAT_ERROR
+  MAIL_FORMAT_ERROR,
+  MAIL_EXISTS
 }

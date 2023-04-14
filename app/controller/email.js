@@ -1,6 +1,5 @@
 const Controller = require('egg').Controller;
 const { MAIL_FORMAT_ERROR } = require('../utils/ErrorInfo')
-
 class emailController extends Controller {
   // 发送邮件
   async send() {

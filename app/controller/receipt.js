@@ -53,10 +53,7 @@ class ReceiptController extends Controller {
     const stream = await ctx.getFileStream();
     const name = 'jinli_img_bk/' + path.basename(stream.filename);
     const res = await ctx.helper.curlToTextin(TextinUrlManager.CROP_ENHANCE_IMAGE_URL, {
-      // dataAsQueryString: true,
-      // data: {
 
-      // },
       stream: stream,
       method: 'POST',
       dataType: 'json'
@@ -71,11 +68,6 @@ class ReceiptController extends Controller {
       )
     }
     ctx.throw(422, '处理失败')
-  }
-
-  async testOSS() {
-    const res = await this.ctx.helper.OSSManagerInstance.listBuckets()
-    return this.ctx.success(res)
   }
 }
 

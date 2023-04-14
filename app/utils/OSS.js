@@ -18,7 +18,7 @@ class OSSManager {
       const result = await this.client.listBuckets();
       return result
     } catch (err) {
-      console.log(err);
+      curlToTextin.throw(err.status, err.message)
     }
   }
 }
