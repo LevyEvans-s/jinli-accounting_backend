@@ -1,9 +1,9 @@
-import { ChatGPTAPI, ChatGPTUnofficialProxyAPI } from "chatgpt";
+import { ChatGPTAPI } from "chatgpt";
 import express from 'express';
 import bodyParser from 'body-parser';
 
 
-const apiKey = "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";
+const apiKey = "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";
 
 
 const app = express()

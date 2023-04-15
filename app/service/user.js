@@ -6,16 +6,24 @@ class UserService extends Service {
     const { ctx } = this
     options.password = options.password ? ctx.helper._md5(options.password) : '';
     if (options.type === 'email') {
-      const res = await ctx.model.User.findOne({
-        raw: true,
+      const result = await ctx.model.User.findOne({
         where: {
           email: options.email,
           password: options.password
         },
       })
-      if (res) {
+      if (result) {
+        const res = result['dataValues']
         const endTime = new Date().getTime() / 1000 - parseInt(new Date(res.created_at).getTime() / 1000);
-        const total_days = parseInt(endTime / 60 / 60 / 24) || 1;   //记账天数
+        const total_days = parseInt(endTime / 60 / 60 / 24) + 1   //记账天数
+        //更新用户的记账天数
+        await result.update({ ...res, total_days },
+          {
+            where: {
+              id: res.id
+            }
+          }
+        )
         return { ...res, total_days }
       } else {
         ctx.throw(422, '邮箱或密码不正确')
@@ -150,7 +158,7 @@ class UserService extends Service {
             ctx.throw(422, '没有传入待更新的用户信息类型')
         }
         if (updatedUserData) {
-          return ctx.helper._.pick(updatedUserData['dataValues'], ['id', 'nickname', 'email', 'gender', 'avatar', 'qq'])
+          return ctx.helper._.pick(updatedUserData['dataValues'], ['id', 'nickname', 'email', 'gender', 'avatar', 'qq', 'sign_days', 'total_days'])
         } else {
           ctx.throw(422, '用户信息更新失败')
         }

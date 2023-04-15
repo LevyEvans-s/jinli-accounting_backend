@@ -11,4 +11,5 @@ module.exports = app => {
   require('./router/user.js')(app)
   require('./router/email.js')(app)
   require('./router/receipt.js')(app)
+  require('./router/gpt.js')(app)
 };

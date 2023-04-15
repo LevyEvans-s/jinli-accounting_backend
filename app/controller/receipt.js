@@ -1,5 +1,5 @@
 const Controller = require('egg').Controller;
-const TextinUrlManager = require('../utils/TextinUrl')
+const TextinUrlManager = require('../utils/TextInUrl')
 const path = require('path')
 const fs = require('fs')
 const sendToWormhole = require('stream-wormhole')
