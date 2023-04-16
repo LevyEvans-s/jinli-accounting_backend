@@ -43,7 +43,13 @@ class ReceiptController extends Controller {
       rawData.forEach(data => {
         res.push(ctx.service.receipt.billsCropParseData(data.data.result.object_list))
       })
-      ctx.success(res)
+      /**
+       * 版本迭代：二维数组再转一维数组
+       */
+      const newRes = res.reduce((pre, cur) => {
+        return [...pre, ...cur]
+      }, [])
+      ctx.success(newRes)
     })
   }
 
